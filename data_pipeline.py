@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import inspect
 from typing import Tuple
 
 import pandas as pd
@@ -108,7 +109,7 @@ def build_preprocessor() -> ColumnTransformer:
     categorical_transformer = Pipeline(
         steps=[
             ("imputer", SimpleImputer(strategy="most_frequent")),
-            ("onehot", OneHotEncoder(handle_unknown="ignore", sparse=False)),
+            ("onehot", _make_one_hot_encoder()),
         ]
     )
 
@@ -121,3 +122,14 @@ def build_preprocessor() -> ColumnTransformer:
         remainder="drop",
     )
     return preprocessor
+
+
+def _make_one_hot_encoder() -> OneHotEncoder:
+    """Return a dense-output OneHotEncoder compatible with multiple sklearn versions."""
+    kwargs = {"handle_unknown": "ignore"}
+    parameters = inspect.signature(OneHotEncoder.__init__).parameters
+    if "sparse_output" in parameters:
+        kwargs["sparse_output"] = False
+    else:
+        kwargs["sparse"] = False
+    return OneHotEncoder(**kwargs)
