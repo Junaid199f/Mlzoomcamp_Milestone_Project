@@ -1,0 +1,18 @@
+{
+  "user_id": 12345,
+  "account_age_days": 120,
+  "total_transactions_user": 35,
+  "avg_amount_user": 85.0,
+  "amount": 120.5,
+  "country": "US",
+  "bin_country": "US",
+  "channel": "web",
+  "merchant_category": "electronics",
+  "promo_used": 0,
+  "avs_match": 1,
+  "cvv_result": 1,
+  "three_ds_flag": 1,
+  "transaction_time": "2024-02-15T12:34:56Z",
+  "shipping_distance_km": 50.4,
+  "transaction_id": 99999
+}
