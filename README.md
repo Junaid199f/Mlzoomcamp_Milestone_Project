@@ -4,9 +4,7 @@ This directory contains a complete mini-project that turns the provided fraud da
 
 1. **Problem framing** – `problem_description.py` explains the business need and why ML is a good fit.
 2. **Data preparation + EDA** – `eda.py` loads `transactions.csv`, engineers time/geography features, and stores statistics + plots inside `artifacts/eda/`.
-3. **Model training & tuning** – `train_models.py` evaluates Logistic Regression, Random Forest, and Gradient Boosting with randomized hyper-parameter search, then persists the champion model to `artifacts/models/best_model.joblib`.
-4. **Notebook export** – `export_notebook.py` converts the attached notebook (`e-commerce-fraud-detection-gb-acc-0-99.ipynb`) into a plain Python script under `artifacts/exports/notebook_export.py`.
-5. **Serving & Docker** – `service.py` exposes the trained model with FastAPI and the included `Dockerfile` lets you deploy it in a container.
+3. **Model training & tuning** – `train_models.py` evaluates Logistic Regression, Random Forest, and Gradient Boosting with randomized hyper-parameter search, then persists the champion model to `artifacts/models/best_model.joblib`.444. **Serving & Docker** – `service.py` exposes the trained model with FastAPI and the included `Dockerfile` lets you deploy it in a container.
 
 Everything is orchestrated through the lightweight CLI in `main.py`.
 
