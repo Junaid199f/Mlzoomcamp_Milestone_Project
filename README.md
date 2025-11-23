@@ -16,7 +16,6 @@ ML Task/
 ├── config.py                # Shared paths and constants
 ├── data_pipeline.py         # Feature engineering and preprocessing builders
 ├── eda.py                   # Reproducible exploratory data analysis script
-├── export_notebook.py       # Converts the notebook to a script
 ├── main.py                  # CLI entry point (describe / eda / train / export)
 ├── problem_description.py   # Narrative about the problem & ML impact
 ├── requirements.txt         # Python dependencies
